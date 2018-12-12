@@ -1,4 +1,6 @@
 export PATH=$HOME/.scripts:$PATH
+export PATH="/usr/lib/ccache/bin/:$PATH"
+export MAKEFLAGS="-j5 -l4"
 export BROWSER="firefox"
 export TERMINAL="urxvt"
 export EDITOR="vim"
