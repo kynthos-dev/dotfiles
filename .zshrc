@@ -1,8 +1,8 @@
 export PATH=$HOME/.scripts:$PATH
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export MAKEFLAGS="-j5 -l4"
-export BROWSER="firefox"
-export TERMINAL="urxvt"
+export BROWSER="google-chrome-stable"
+export TERMINAL="st"
 export EDITOR="vim"
 
 # Path to your oh-my-zsh installation.
