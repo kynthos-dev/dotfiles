@@ -106,8 +106,10 @@ fi
 # For a full list of active aliases, run `alias`.
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias i3config="vim ~/.config/i3/config"
+alias polybarconfig="vim ~/.config/polybar/config"
+
+
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 alias dotfiles-commit="dotfiles commit -a"
 alias dotfiles-push="dotfiles push -u origin master"
-alias i3config="vim ~/.config/i3/config"
