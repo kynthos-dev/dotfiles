@@ -1,6 +1,7 @@
 export PATH=$HOME/.scripts:$PATH
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export MAKEFLAGS="-j5 -l4"
+export BROWSER="surf"
 export BROWSER="google-chrome-stable"
 export TERMINAL="st"
 export EDITOR="vim"
@@ -113,3 +114,6 @@ alias polybarconfig="vim ~/.config/polybar/config"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 alias dotfiles-commit="dotfiles commit -a"
 alias dotfiles-push="dotfiles push -u origin master"
+
+powerline-daemon -q
+. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh

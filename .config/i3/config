@@ -15,17 +15,19 @@
 ###########################################################################
 ## Needed for i3-gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 4 
-gaps outer 4 
+gaps inner 4
+gaps outer 4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-#font pango:Cantarell 9	
+#font pango:Cantarell 9
 font pango:monospace 8
 
 set $mod Mod4
+
 set $term --no-startup-id $TERMINAL
+
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot now
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
@@ -69,8 +71,6 @@ exec --no-startup-id nm-applet
 ## mpd startup
 ## exec --no-startup-id mpd
 
-
-
 ##########################################################################
 ##                    #---Visual setup---#                                #
 ###########################################################################
@@ -92,16 +92,16 @@ hide_edge_borders both
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
-#        status_command i3status
-#        	font pango:Cantarell 9	
-#        		mode dock
-#        			position top
-#        				
-#        					colors {
- #       							background $bg-color
-  #      								    	separator #757575
-   #     								    			#                  border             background         text
-    #    								    					focused_workspace  $bg-color          $bg-color          $text-color
+#       status_command i3status
+#      	font pango:Cantarell 9
+#	mode dock
+#      	position top
+#
+#      	colors {
+#    		background $bg-color
+#    	    	separator #757575
+#                border             background         text
+#	focused_workspace  $bg-color          $bg-color          $text-color
      #   								    							inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
       #  								    									urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
        # 								    										}
@@ -114,9 +114,9 @@ hide_edge_borders both
 ###########################################################################
 
 bindsym $mod+Return 		exec $term
-#bindsym $mod+Shift+Return 	
+bindsym $mod+Shift+Return 	exec $term
 
-bindsym $mod+Escape		workspace prev 
+bindsym $mod+Escape		workspace prev
 #bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
 # bindsym $mod+BackSpace
@@ -138,72 +138,72 @@ floating_modifier $mod
 bindsym $mod+q 			kill
 bindsym $mod+Shift+q 		kill
 
-#bindsym $mod+w 			
-#bindsym $mod+Shift+w 		
+#bindsym $mod+w
+#bindsym $mod+Shift+w
 
 #bindsym $mod+e 		layout toggle split
-#bindsym $mod+Shift+e 		
+#bindsym $mod+Shift+e
 
-#bindsym $mod+r 			
-bindsym $mod+Shift+r 		restart
+bindsym $mod+r			restart
+bindsym $mod+Shift+r 		gaps inner current set 0; gaps outer current set 0
 
-#bindsym $mod+t 			
-#bindsym $mod+Shift+t 		
+#bindsym $mod+t
+#bindsym $mod+Shift+t
 
-#bindsym $mod+y 			
-#bindsym $mod+Shift+y 		
+#bindsym $mod+y
+#bindsym $mod+Shift+y
 
-#bindsym $mod+u 			
-bindsym $mod+Shift+u 		exec --no-startup-id "zsh ~/.scripts/i3resize left"		
+#bindsym $mod+u
+bindsym $mod+Shift+u 		exec --no-startup-id "zsh ~/.scripts/i3resize left"
 
-#bindsym $mod+i 			
-bindsym $mod+Shift+i		exec --no-startup-id "zsh ~/.scripts/i3resize up"		
+#bindsym $mod+i
+bindsym $mod+Shift+i		exec --no-startup-id "zsh ~/.scripts/i3resize up"
 
-#bindsym $mod+o 			
-bindsym $mod+Shift+o		exec --no-startup-id "zsh ~/.scripts/i3resize down"				
+#bindsym $mod+o
+bindsym $mod+Shift+o		exec --no-startup-id "zsh ~/.scripts/i3resize down"
 
-#bindsym $mod+p 			
-bindsym $mod+Shift+p		exec --no-startup-id "zsh ~/.scripts/i3resize right"				
+bindsym $mod+p              exec rofi -show run #lines 3 -eh 2 -width 50 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Cantarell 18"
+bindsym $mod+Shift+p		exec --no-startup-id "zsh ~/.scripts/i3resize right"
 #################################################################
 
 bindsym $mod+a 		focus parent
-#bindsym $mod+Shift+a 		
+#bindsym $mod+Shift+a
 
 #bindsym $mod+s 		layout stacking
-bindsym $mod+s			gaps inner current plus 2 			
+bindsym $mod+s			gaps inner current plus 2
 bindsym $mod+Shift+s 		gaps inner current minus 2
 
 bindsym $mod+d 			exec rofi -show run #lines 3 -eh 2 -width 50 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Cantarell 18"
-bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0 		
+bindsym $mod+Shift+d		exec --no-startup-id "i3-msg 'workspace 1; append_layout $HOME/.config/.i3/development-workspace.json'"			
 
 bindsym $mod+f 			fullscreen toggle
-#bindsym $mod+Shift+f 		
+#bindsym $mod+Shift+f
 
 bindsym $mod+g 			exec gscreenshot
 #bindsym $mod+Shift+g
- 		
+
 bindsym $mod+h 			split h
-#bindsym $mod+Shift+h 		
+#bindsym $mod+Shift+h
 
 bindsym $mod+j 			focus left
 bindsym $mod+Shift+j		move left 20
 
 bindsym $mod+k 			focus down
-bindsym $mod+Shift+k		move down 20	
+bindsym $mod+Shift+k		move down 20
 
 bindsym $mod+l 			focus up
-bindsym $mod+Shift+l		move up 20	
+bindsym $mod+Shift+l		move up 20
 
 bindsym $mod+semicolon 		focus right
-bindsym $mod+Shift+semicolon	move right 20	
+bindsym $mod+Shift+semicolon	move right 20
 	###############################################################
 
 
-bindsym $mod+b 			exec --no-start-id firefox 
-#bindsym $mod+Shift+b 		exec --no-start-id $BROWSER
+bindsym $mod+b 			exec --no-startup-id surf
+bindsym $mod+Shift+b 		exec --no-startup-id $BROWSER
 
 
-#bindsym $mod+c			
+bindsym --release $mod+c	exec scrot -s $HOME/Pictures/%Y-%m-%d-%T-screenshot.png
 #bindsym $mod+Shift+c reload
 
 bindsym $mod+z 			gaps outer current plus 5
@@ -283,11 +283,3 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-
-
-
-
-
-
-
-
