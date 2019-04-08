@@ -83,7 +83,6 @@ let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 
 
-
 let g:ale_fix_on_save = 1	" Set this variable to 1 to fix files when you save them.
 let g:ale_linters = {
   			\ 'python': ['flake8'] ,
@@ -102,7 +101,7 @@ let g:user_emmet_settings = {
 			\  },
 			\}
 
-" ncm2 settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""" NCM2 Settings
 " autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=menuone,noselect,noinsert
 set shortmess+=c
@@ -112,8 +111,10 @@ let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1, 1]]
 " Use new fuzzy based matches
 let g:ncm2#matcher = 'substrfuzzy'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""" NCM2 Settings
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""" JEDI-VIM 
 " Disable Jedi-vim autocompletion and enable call-signatures options
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
@@ -122,6 +123,8 @@ let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""" JEDI-VIM 
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""" KEYBINDINGS
 " TODO: Pick a leader key
